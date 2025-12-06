@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.so
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# Environment variables
+*.env
+.env.*
+*.env.local
+*.secret
+
+# Django specific
+*.log
+*.pot
+*.pyc
+db.sqlite3
+db.sqlite3-journal
+
+# Django collected static files
+/static/
+/media/
+
+# Migrations (optional – remove if you want migrations tracked)
+**/migrations/__pycache__/
+**/migrations/*.pyc
+**/migrations/*.py~
+# Uncomment next line if you do NOT want to track migration files
+# **/migrations/
+
+# Byte-compiled
+*.pyc
+__pycache__/
+
+# IDE / Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.orig
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+
+# Django Debug Toolbar
+debug_toolbar/
+
+# Build / dist
+build/
+dist/
+*.egg-info/
