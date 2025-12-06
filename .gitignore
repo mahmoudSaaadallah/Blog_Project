@@ -29,11 +29,10 @@ db.sqlite3-journal
 /static/
 /media/
 
-# Migrations (optional – remove if you want migrations tracked)
+# Migrations (optional)
 **/migrations/__pycache__/
 **/migrations/*.pyc
 **/migrations/*.py~
-# Uncomment next line if you do NOT want to track migration files
 # **/migrations/
 
 # Byte-compiled
@@ -70,3 +69,26 @@ debug_toolbar/
 build/
 dist/
 *.egg-info/
+
+# --------------------------------------------------
+# Block user-uploaded images from being tracked
+# --------------------------------------------------
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.svg
+*.webp
+*.heic
+*.heif
+
+# If user uploads are stored in a folder (recommended)
+# Uncomment these if you use a dedicated upload directory:
+# user_uploads/
+# uploads/
+# user_images/
+# Ignore user-uploaded profile pictures
+profile_pics/
+media/profile_pics/
