@@ -17,7 +17,9 @@
     </div>
     <hr />
     <h2 class="mb-1">
-      <a class="article-title text-decoration-none" href="#"
+      <a
+        class="article-title text-decoration-none"
+        href="{% url 'post-detail' post.pk %}"
         >{{ post.title }}</a
       >
     </h2>
