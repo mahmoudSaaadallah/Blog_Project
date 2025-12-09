@@ -20,6 +20,21 @@
     <h2 class="mb-1 article-title text-decoration-none">{{ post.title }}</h2>
 
     <p class="article-content mb-0">{{ post.content }}</p>
+    <hr />
+    <div class="mt-4">
+      {% if post.author == user %}
+      <a
+        href="{% url 'post-update' post.pk %}"
+        class="btn btn-outline-secondary btn-lg btn-block mb-2 fs-5 fw-bold border-2">
+        Update
+      </a>
+      <a
+        href="{% url 'post-delete' post.pk %}"
+        class="btn btn-outline-danger btn-lg btn-block mb-2 fs-5 fw-bold border-2">
+        Delete
+      </a>
+      {% endif %}
+    </div>
   </div>
 </article>
 
