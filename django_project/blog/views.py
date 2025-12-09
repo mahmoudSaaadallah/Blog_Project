@@ -50,6 +50,25 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     # After creating a new post we have to tell the Django what is the next distnation so we have to override the success_url or implement get_absolute_url in the Post mode.
     
 
+# We have to know that the default Template that used with the create view is the same as the one that used with update, so we don't need to new Templete for update.
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Post
+    fields = ['title', 'content']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    
+    # To make sure that the user who will update the post is the owner for that post not anyone else.
+    # we have to use UserPassesTestMixin class by inherting it and override the test_fun() to add the validation for the user.
+    # The test_func return boolean so it has to return True if the user is valid and False otherwise.
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+    
+
 
 def about(request):
     return render(request, 'blog/about.html', {'title':'About'},)
