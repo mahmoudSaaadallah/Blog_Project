@@ -68,6 +68,17 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return True
         return False
     
+class PostDeletView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Post
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+    
+    # To Make sure that the deletation happend correctly we have to provide a success url to specify the url that it will be routed when the detlation happen.
+    success_url = '/'
 
 
 def about(request):
