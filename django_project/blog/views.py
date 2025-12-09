@@ -47,6 +47,8 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
     
+    # After creating a new post we have to tell the Django what is the next distnation so we have to override the success_url or implement get_absolute_url in the Post mode.
+    
 
 
 def about(request):
