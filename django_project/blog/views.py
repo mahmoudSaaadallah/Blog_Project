@@ -1,6 +1,16 @@
 from django.shortcuts import render
 from .models import Post
-from django.views.generic import ListView, DetailView
+from django.views.generic import(
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+    )
+from django.contrib.auth.mixins import(
+    LoginRequiredMixin,
+    UserPassesTestMixin,
+    )
 # Create your views here.
 
 
@@ -23,6 +33,20 @@ class PostDetailView(DetailView):
     model = Post
     # for the template we wouldn't chang it as we are going to use the default name.
     context_object_name = 'post'
+
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'content']
+    # The default Template name is appname/modelname_form.html => blog/post_form.html
+    # We could override template_name to make it anthing else, but we will keep it for now.
+    
+    # Here we need to over the form_valid to add the pk for the user who create the post to the post table
+    # this will happen only if override the form_vaild function and add a new instance to this function
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    
 
 
 def about(request):
