@@ -11,7 +11,7 @@
       class="d-flex w-100 justify-content-between align-items-center media-body mb-1">
       <a
         class="mr-2 text-decoration-none link-hover-brown link-color-dark"
-        href="#"
+        href="{% url 'user-posts' post.author %}"
         >{{ post.author }}</a
       >
       <small class="text-muted">{{ post.date_posted }}</small>

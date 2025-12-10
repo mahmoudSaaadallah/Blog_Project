@@ -1,4 +1,10 @@
-{% extends 'blog/base.html' %} {% block content %} {% for post in posts %}
+{% extends 'blog/base.html' %} {% block content %}
+<div class="d-flex">
+  <h1 class="mb-4">Posts by {{ view.kwargs.username }}</h1>
+  <h3 class="ms-auto">({{ page_obj.paginator.count }})</h3>
+</div>
+
+{% for post in posts %}
 <article class="d-flex media content-section align-items-start">
   <img
     class="rounded-circle article-img mr-3"
@@ -10,7 +16,7 @@
       class="d-flex w-100 justify-content-between align-items-center media-body mb-1">
       <a
         class="mr-2 text-decoration-none link-hover-brown link-color-dark"
-        href="{% url 'user-posts' post.author %}"
+        href="{% url 'user-posts' view.kwargs.username %}"
         >{{ post.author }}</a
       >
       <small class="text-muted">{{ post.date_posted }}</small>
