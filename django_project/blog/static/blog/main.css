@@ -93,3 +93,14 @@ a.article-title:hover {
 .link-color-dark {
   color: #444444c7;
 }
+.preview {
+  display: -webkit-box;
+  -webkit-line-clamp: 15;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.link-color-green {
+  color: green;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

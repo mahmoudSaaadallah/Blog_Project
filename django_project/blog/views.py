@@ -29,12 +29,18 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
+    # Here I will use Paginate by 5 posts in one page.
+    # For that we have to override the paginate_by attribute.
+    # This will allow us to show 5 posts in one page and we could handle the rest of the posts by using pagination links in template.
+    paginate_by = 5
+
     # As we are going to access the author name for each post in the home.html template then we have a problem about N + 1 Queries 
     # To fix this problem we have to use select_related method to avoid N + 1 Queries
     # Here in the class based view this is not handeled by default then we have to handel it manually.
     # For that we have to override the get_queryset method.
     def get_queryset(self):
         return Post.objects.select_related('author').all() 
+    
 
 class PostDetailView(DetailView):
     model = Post
