@@ -16,7 +16,7 @@ from django.contrib.auth.mixins import(
 
 def home(request):
     context = {
-        'posts':Post.objects.all()
+        'posts':Post.objects.select_related('author').all()
     }
     return render(request, 'blog/home.html', context=context)
 
@@ -29,10 +29,20 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
+    # As we are going to access the author name for each post in the home.html template then we have a problem about N + 1 Queries 
+    # To fix this problem we have to use select_related method to avoid N + 1 Queries
+    # Here in the class based view this is not handeled by default then we have to handel it manually.
+    # For that we have to override the get_queryset method.
+    def get_queryset(self):
+        return Post.objects.select_related('author').all() 
+
 class PostDetailView(DetailView):
     model = Post
     # for the template we wouldn't chang it as we are going to use the default name.
     context_object_name = 'post'
+
+    # Here because we are dealing with single object we don't have to optimize the query by using select_related, because It's only applied for single object.
+    # This will case only one extra query to the database.
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
@@ -77,7 +87,7 @@ class PostDeletView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
     
-    # To Make sure that the deletation happend correctly we have to provide a success url to specify the url that it will be routed when the detlation happen.
+    # To Make sure that  the deletation happend correctly we have to provide a success url to specify the url that it will be routed when the detlation happen.
     success_url = '/'
 
 
