@@ -73,12 +73,16 @@ dist/
 # --------------------------------------------------
 # Block user-uploaded images from being tracked
 # --------------------------------------------------
+
+# First, un-ignore image files in the docs directory for the README
+!docs/images/*.png
+!docs/images/*.jpg
+
 *.png
 *.jpg
 *.jpeg
 *.gif
 *.bmp
-*.tiff
 *.svg
 *.webp
 *.heic
