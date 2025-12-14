@@ -23,7 +23,7 @@ Here is a preview of the main pages of the application.
 
 Displays all blog posts from all users, with pagination.
 
-_(Image placeholder: Add a screenshot of your home page here)_
+[![Home Page](docs/images/homepage.png)](https://github.com/mahmoudSaaadallah/Blog_Project/blob/main/docs/images/homepage.png)
 
 ### Register Page
 
