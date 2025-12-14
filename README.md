@@ -41,13 +41,14 @@ Allows existing users to sign in.
 
 Displays the user's profile information (username, email, profile picture) and a list of their posts. Users can also update their profile from this page.
 
-_(Image placeholder: Add a screenshot of a user profile page here)_
+[![Login Page](docs/images/ProfilePage.png)]()
 
 ### New Post / Update Post Page
 
 A form for creating or updating a blog post.
 
-_(Image placeholder: Add a screenshot of the post creation form here)_
+[![New Post Page](docs/images/NewPost.png)]()
+[![Update Post Page](docs/images/UpdatePost.png)]()
 
 ### Post Detail Page
 
