@@ -123,6 +123,7 @@ The application will be available at `http://127.0.0.1:8000/`.
 
 Mahmoud Saadallah
 
-- **Email**: mahmoud.saadallah73@gmail.com
-- **GitHub**: mahmoudSaaadallah
-- **LinkedIn**: mahmoudsaadallahi
+- **Email**: [mahmoud.saadallah73@gmail.com](mailto:mahmoud.saadallah73@gmail.com)
+- **GitHub**: [mahmoudSaaadallah](https://github.com/mahmoudSaaadallah)
+- **LinkedIn**: [Mahmoud Saadallah](https://www.linkedin.com/in/mahmoudsaadallahi/)
+- **Facebook**: [Mahmoud Saadallah](https://www.facebook.com/mahmoudsaaadallah)
