@@ -1,0 +1,12 @@
+# Django Framework
+Django>=4.0,<5.0
+
+# For image handling (e.g., profile pictures)
+Pillow>=9.0,<11.0
+
+# For styling forms with Bootstrap 5
+django-crispy-forms>=2.0,<3.0
+crispy-bootstrap5>=2022.1
+
+# Production WSGI Web Server
+gunicorn>=20.0,<22.0
