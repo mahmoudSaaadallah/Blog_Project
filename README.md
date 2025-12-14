@@ -29,13 +29,13 @@ Displays all blog posts from all users, with pagination.
 
 Allows new users to create an account.
 
-_(Image placeholder: Add a screenshot of your register page here)_
+[![Register Page](docs/images/RegisterPage.png)]()
 
 ### Login Page
 
 Allows existing users to sign in.
 
-_(Image placeholder: Add a screenshot of your login page here)_
+[![Login Page](docs/images/LoginPage.png)]()
 
 ### Profile Page
 
