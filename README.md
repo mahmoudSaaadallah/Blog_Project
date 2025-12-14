@@ -54,7 +54,8 @@ A form for creating or updating a blog post.
 
 Shows the full content of a single post. If the logged-in user is the author, they will see options to update or delete the post.
 
-_(Image placeholder: Add a screenshot of a post detail page here)_
+[![Post Detail Page](docs/images/PostDetail.png)]()
+[![Post Detail Page](docs/images/PostDetail2.png)]()
 
 ### About Page
 
