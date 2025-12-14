@@ -74,9 +74,6 @@ dist/
 # Block user-uploaded images from being tracked
 # --------------------------------------------------
 
-# First, un-ignore image files in the docs directory for the README
-!docs/images/*.png
-!docs/images/*.jpg
 
 *.png
 *.jpg
@@ -96,3 +93,7 @@ dist/
 # Ignore user-uploaded profile pictures
 profile_pics/
 media/profile_pics/
+
+# First, un-ignore image files in the docs directory for the README
+!docs/images/*.png
+!docs/images/*.jpg
