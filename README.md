@@ -61,7 +61,7 @@ Shows the full content of a single post. If the logged-in user is the author, th
 
 Contains information about the project and the developer.
 
-_(Image placeholder: Add a screenshot of your about page here)_
+[![About Page Page](docs/images/AboutPage.png)]()
 
 ---
 
